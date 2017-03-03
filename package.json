@@ -2,6 +2,8 @@
   "name": "application-name",
   "version": "0.0.1",
   "dependencies": {
+    "aws-sdk": "^2.22.0",
+    "file-system": "^2.2.2",
     "hat": "0.0.3"
   }
 }

@@ -60,6 +60,23 @@ package:
 #    - exclude-me-dir/**
 
 functions:
+  getRecord:
+    handler: dynamoTest.getRecord
+    events:
+        - http:
+            path: getRecord/{title}/{year}
+            method: get
+            cors: true
+
+
+  getRecordRange:
+    handler: dynamoTest.getRecordRange
+    events:
+      - http:
+          path: getRecordRange
+          method: get
+          cors: true
+
   fullTableScan:
     handler: dynamoTest.fullTableScan
     events:
@@ -80,7 +97,7 @@ functions:
     handler: dynamoTest.editRow
     events:
       - http:
-          path: editRow/{id}
+          path: editRow
           method: put
           cors: true
 
@@ -91,6 +108,16 @@ functions:
           path: deleteRow/{id}
           method: delete
           cors: true
+
+
+  createTable:
+    handler: dynamoTest.createTable
+    events:
+      - http:
+          path: createTable
+          method: put
+          cors: true
+
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
